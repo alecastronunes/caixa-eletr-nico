@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 25px;
+    color: aliceblue;
+}
+
+body{
+    background-color: #0B486B;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+section {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.botao-operacao{
+    padding: .8rem;
+    min-width: 50px;
+}
+
+.botao {
+    width: 90px;
+    height: 53px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 1px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input {
+    padding: 15px;
+    padding-left: 60px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+textarea {
+    width: 24rem;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+
+}
+
+.saldo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 80px;
+    font-size: 30px;
+}
+
+#extrato-button {
+    width: 385px;
+    height: 53px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 1px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#extrato-button:hover {
+    border: 2px solid black;
+    transform: scale(1); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    background-color: #E07F00;
+}
+
+.botao:hover {
+    border: 2px solid black;
+    transform: scale(1); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    background-color: #E07F00;
+}
+
+.botao-operacao {
+    padding-top: 25px;
+    color: aliceblue;
+}

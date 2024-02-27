@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script/script.js" defer></script>
+    <title>Caixa Eletrônico</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Easy Bank</h1>
+        </header>
+
+        <section>
+            <div class="botao-operacao">
+                <input type="number" placeholder="Depósito" id="deposito">
+                <button class="botao" id="depositar" onclick="depositarDinheiro()">Depositar</button>
+            </div>
+            <div class="botao-operacao">
+                <input type="number" placeholder="Saque" id="sacar">
+                <button class="botao" id="sacar" onclick="sacarDinheiro()">Sacar</button>
+            </div>
+            <div id="extrato" class="botao-operacao">
+                <textarea name="" id="extrato-resultado" cols="30" rows="10"></textarea><br><br><br>
+                <button id="extrato-button" onclick="exibirExtrato()">Extrato</button>
+            </div>
+
+            <div class="botao-operacao">
+                <h2>Saldo:</h2>
+                <div id="saldoNaTela" class="saldo">0</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
