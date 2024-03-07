@@ -3,6 +3,7 @@ let extrato = []
 
 function depositarDinheiro() {
     let deposito = document.getElementById('deposito').value
+    document.getElementById('deposito').value = ""
     if(deposito > 0) {
         saldoAtual = parseFloat(saldoAtual)  + parseFloat(deposito)
         saldoNaTela.innerHTML = saldoAtual.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
@@ -15,16 +16,15 @@ function depositarDinheiro() {
             timer: 1500
           });
     }else{
-        ////window.alert('Valor inválido!!!')
         Swal.fire({   title: "Atenção",   text: "Operação inválida!!!",   icon: "error"});
     }   
 }   
 
 function sacarDinheiro() {
     let saque = document.getElementById('sacar').value
+    document.getElementById('sacar').value = ""
     if(saldoAtual < saque){
         Swal.fire({   title: "Atenção",   text: "Saldo Insuficiente!!!",   icon: "error"});
-        //window.alert('Saldo insuficiente!!!')
     }else if(saque > 0) {
         saldoAtual = parseFloat(saldoAtual) - parseFloat(saque)
         saldoNaTela.innerHTML = saldoAtual.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
@@ -37,14 +37,12 @@ function sacarDinheiro() {
             timer: 1500
           });
     }else{
-        //window.alert('Valor inválido!!!')
         Swal.fire({   title: "Atenção",   text: "Operação inválida!!!",   icon: "error"});
      }
 }
 
 function salvarTransacao(tipo, valor) {
-    //const textoExtrato = tipo + ' - Valor R$: ' + valor
-    const textoExtrato = `${dataAtualFormatada()} - ${tipo} - Valor: ${valor}` 
+    const textoExtrato = `${dataAtualFormatada()} - ${tipo} - Valor: ${formataValor(valor)}` 
     extrato.push(textoExtrato)
 }
 
@@ -61,4 +59,10 @@ function dataAtualFormatada(){
         mes  = (data.getMonth()+1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
         ano  = data.getFullYear();
         return dia+"/"+mes+"/"+ano;
+}
+
+//Formata o Valor para o Real
+function formataValor(valor){
+    valor = parseFloat(valor)
+    return 'R$ ' + valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, "$1.");
 }
